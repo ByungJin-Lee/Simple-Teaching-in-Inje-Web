@@ -1,0 +1,195 @@
+/* import reset css */
+@import url("./reset.css");
+/* root variables - default */
+:root{
+    /* default color setting */
+    --bgColor-default: rgba(255,255,255,1);
+    --fontColor-default: rgba(0,0,0,1);
+    --fontColor-drag: rgba(255,255,255);
+    --bgColor-drag:rgba(203, 91, 255, 0.8);    
+    /* header setting */
+    --header-whole-min-height:3em;
+    --header-bgColor:rgba(255, 255, 255, 0.4);
+    --header-fontColor:rgba(0,0,0,1);
+    --header-items-margin-lr:1em;
+    --header-items-margin-ud:0.5em;
+    --header-transition-duration: 0.25s;    
+    --header-font-size:1.3em;
+    /* footer setting */
+    --footer-whole-min-height:3em;
+    --footer-bgColor:rgba(0,0,0,1);
+    --footer-fontColor:rgba(255,255,255,1);
+    /* middel inner */    
+    --middle-inner-bgColor:rgba(255,255,255,0.6);
+    --middle-inner-padding:2em;    
+    --middle-inner-border-radius:1em;
+    --middle-inner-width:73%;
+    --middle-inner-animation-duration:0.5s;
+    /* custom scrollbar */
+    --scrollbar-bgColor: rgb(255, 255, 255,0.7);
+    --scrollbar-width: 7px;
+}
+/* drag Color */
+::-moz-selection{
+    color:var(--fontColor-drag);
+    background-color:var(--bgColor-drag);
+}
+::selection{
+    color:var(--fontColor-drag);
+    background-color:var(--bgColor-drag);
+}
+
+/* invisible */
+.invisible{
+    display:none;
+}
+
+/* html body setting */
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar{
+    display:none;
+}
+
+/* custom scrollbar */
+.customScrollbar{
+    display:block;
+    position:absolute;    
+    top:0px;
+    right:0px;
+    width:7px;
+    border-radius: var(--scrollbar-width);
+    background-color: var(--scrollbar-bgColor);
+}
+
+/* wrappers */
+
+.wholeWrapper{
+    width:inherit;      
+    background-color:var(--bgColor-default);     
+}
+
+.landingWrapper{
+    width:inherit;
+    height: 100vh;
+    background-image:url("../../img/default/background/wallpaperbetter.com_2560x1440.jpg");
+    background-size:cover;
+    background-color:black;
+}
+
+
+.contentWrapper{
+    width:inherit;
+    height: 100vh;
+    background-image:url("../../img/default/background/wallpaperbetter\ turn.jpg");
+    background-blend-mode: lighten;
+    background-size:cover;
+}
+
+/* header */
+header.top{
+    font-size:var(--header-font-size);
+    display:flex;
+    position:-webkit-sticky;
+    font-weight: bold;
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;   
+    background-color:var(--header-bgColor);
+    min-height: var(--header-whole-min-height);    
+    justify-content: space-between;
+    align-items: center;
+    color:var(--header-fontColor);
+    transition:all var(--header-transition-duration); 
+    box-shadow: 0px 1px 5px 2px var(--header-bgColor) ;
+}
+
+header.top.hide{
+    top:calc(-1*var(--header-whole-min-height));
+}
+
+header.top > div{
+    margin: var(--header-items-margin-ud) var(--header-items-margin-lr);
+}
+
+/* Logo */
+
+header.top .logo{
+    cursor:pointer;
+}
+
+header.top .logo .big{
+
+}
+
+header.top .logo .small{
+
+}
+
+/* Login Logout */
+
+header.top .controller{
+    cursor:pointer;
+}
+
+header.top .controller .login{
+
+}
+
+header.top .controller .logout{
+
+}
+
+
+/* middle */
+div.middle{
+    width:inherit;    
+    height: inherit;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+div.middle .inner{    
+    margin-top:var(--middle-inner-margin-top);
+    background-color:var(--middle-inner-bgColor);
+    padding:var(--middle-inner-padding);
+    width:var(--middle-inner-width);
+    height: var(--middle-inner-heigth);
+    border-radius: var(--middle-inner-border-radius);
+    transition-property: all; 
+    transition-duration: var(--middle-inner-animation-duration);
+}
+
+/* 800 */
+@media screen and (max-width:550px) {
+    :root{
+        /* middel inner */        
+        --middle-inner-bgColor:rgba(255,255,255,0.6);
+        --middle-inner-padding:1em;    
+        --middle-inner-border-radius:1em;
+        --middle-inner-width:360px;
+    }
+}
+
+/* footer */
+footer.bottom{
+    display:flex;
+    position:absolute;
+    bottom: 0px;
+    left:0px;
+    width:100%;
+    color:var(--footer-fontColor);
+    min-height: var(--footer-whole-min-height);
+    align-items: center;
+    justify-content: center;
+    background-color:var(--footer-bgColor);
+}
