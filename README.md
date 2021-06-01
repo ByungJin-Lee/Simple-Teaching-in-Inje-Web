@@ -1,4 +1,5 @@
-#Simple Teaching in Inje("인제 간단하죠")
+Simple Teaching in Inje("인제 간단하죠")
+===
 Summary
 ---
 
